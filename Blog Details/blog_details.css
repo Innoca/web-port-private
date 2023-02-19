@@ -1,0 +1,528 @@
+/* GENERAL LAYOUT */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+:root {
+    --COLORBG: #0e1411;
+    --COLOR: #daebf1; 
+    --COLORHD: #0b0c14;
+    --COLORFT: #0a0e0a;
+    --COLORGR: rgb(12, 243, 166);
+    --COLORBD: rgb(35, 39, 37);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--COLORBG);
+    color: var(--COLOR);
+    width: 100%;
+    overflow-x: none;
+}
+
+
+
+
+.logo img {
+    width: 80px;
+    margin: 5px;
+}
+
+/* SMALL DEVICES */
+form input {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 10px;
+    background: rgb(27, 31, 29);
+    border-style: none;
+    border: 1px solid var(--COLORGR);
+}
+
+form {
+    display: flex ;
+    flex-direction: column;
+    margin: 50px;
+}
+
+.blog-action {
+    margin-left: 50px;
+}
+
+
+.like-btn button{
+    width: 150px;
+    height: 40px;
+    background: transparent;
+    color: var(--COLOR);
+    border: var(--COLORGR) 1px solid;
+    margin-bottom: 10px;
+    cursor: pointer;
+    margin-left: 50px;
+}
+
+.blog-action {
+    display: flex;
+    flex-direction: column;
+}
+
+#icon {
+    margin-left: 10px;
+}
+
+form button {
+    width: 150px;
+    height: 40px;
+    background: transparent;
+    color: var(--COLOR);
+    border: var(--COLORGR) 1px solid;
+}
+
+
+/* HEADER */
+
+.header {
+    display: flex;
+    flex-direction: row;
+    background: var(--COLORFT);
+    position: fixed;
+    top: 0;
+    width: 100vw;
+}
+
+.header .fa-bars {
+    position: absolute;
+    right: 0;
+    margin: 10px;
+}
+
+#navLinks1, .header a {
+    display: none;
+}
+
+.main-container {
+    margin-top: 50px;
+    display: grid;
+    grid-template-rows: 1fr 50px;
+    overflow: hidden;
+}
+
+.main{
+    height: 90vh;
+}
+
+.suggestions {
+    display: none;
+}
+
+
+/* Side menu pop-up */
+
+nav ul li {
+    display: block;
+    padding: 10px;
+}
+
+nav {
+    position: fixed;
+    background: var(--COLORFT);
+    height: 100vh;
+    width: 200px;
+    top: 0;
+    right: -500px;
+    text-align: left;
+    z-index: 2;
+    padding-left: 20px;
+    transition: 1.2s;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--COLOR);
+    font-size: 15px;
+}
+
+nav ul li::after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    display: block;
+    margin: auto;
+}
+
+.fa-bars {
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+    font-size: 1.5rem;
+    margin-left: 90px;
+    color: var(--COLOR);
+}
+
+.fa-times {
+    margin-left: 5px;
+    color: var(--COLOR);
+}
+
+/* BODY */
+
+.main {
+    height: max-content;
+}
+
+.main h1 {
+    font-size: 3rem;
+    margin: 20px;
+}
+
+.container-img {
+    display: flex;
+    justify-content: center;
+}
+
+.container-img img {
+    width: 90vw;
+    text-align: center;
+    border-radius: 60% 0% 60% 0%;
+}
+
+.main p {
+    margin: 50px;
+    text-align: left ;
+}
+
+.main h3 {
+    text-align: center;
+    color: var(--COLORGR);
+}
+
+/* FOOTER */
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 50px;
+    border: var(--COLORBD) 1px solid;
+    border-top: var(--COLORGR) 5px solid;
+}
+
+.footer-container h2 {
+    text-align: center;
+    margin-top: 20px;
+    
+}
+
+.footer-container p {
+    margin-top: 20px;
+    margin: 10px 50px;
+    padding: 10px;
+    text-align: center;
+}
+
+.footer-container button {
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    background: transparent;
+    border-color: var(--COLORGR);
+    color: var(--COLOR);
+    margin-bottom: 20px;
+}
+
+.footer {
+    background-color: var(--COLORFT);
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.socials i {
+    margin: 20px;
+}
+
+.socials .fa-brands {
+    font-size: 1rem;
+}
+
+.socials a {
+    text-decoration: none;
+    color: var(--COLOR);
+}
+
+
+
+
+
+/* MEDIA QUERIES */
+
+@media (min-width: 769px) {
+
+    /* HEADER */
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        background: var(--COLORFT);
+        position: fixed;
+        top: 0;
+        width: 100vw;
+    }
+
+    .header i {
+        position: absolute;
+        right: 0;
+        margin: 10px;
+    }
+
+    .header .fa-bars {
+        display: none;
+    }
+
+    .nav-links1 {
+        list-style: none;
+        display: flex;
+        align-items: center;
+    }
+
+    #navLinks1, .header a {
+        display: flex;
+        text-decoration: none;
+        color: var(--COLOR);
+    }
+
+    .nav-links1 li{
+        margin-right: 20px;
+    }
+
+    .button1 {
+        display: flex;
+        align-items: center;
+    }
+
+    .button1 fa-user {
+        margin-right: 10px;
+    }
+
+
+    /* MAIN */
+
+    .main-container {
+        gap: 5px;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        margin-top: 53px;
+        
+    }
+
+
+    .main {
+        grid-column: 2/9;
+        grid-row: 1/5;
+
+    }
+
+    .suggestions {
+        display: inherit;
+        grid-row: 1/4;
+        grid-column: 10/13;
+    }
+
+   
+
+    .footer {
+        grid-column: 1/13;
+        grid-row: 5/5;
+        background-color: var(--COLORFT);
+    }
+
+    
+    .aside {
+        grid-column: 1/2;
+        grid-row: 1/5;
+    }
+
+
+    /* BODY */
+
+    .card {
+        width: 5000px;
+    }
+
+    .card h3 {
+        font-size: 4rem;
+    }
+
+    .container-img img {
+        width: 50vw;
+        text-align: center;
+        border-radius: 60% 0% 60% 0%;
+    }
+
+    /* SUGGESTIONS */
+    .categories {
+        margin: 200px 30px 30px 30px;
+        color: var(--COLORGR);
+    }
+
+    .categories h2 {
+        margin-bottom: 30px;
+    }
+
+    .categories ul {
+        list-style: none;
+    }
+
+    .categories ul a {
+        text-decoration: none;
+        color: var(--COLORGR);
+
+    }
+
+    .categories ul a li {
+        margin: 10px auto;
+    }
+
+    .related-blogs {
+        margin: 0 10px 1200px 30px;
+        color: var(--COLORGR);
+    }
+
+    .related-blogs h2 {
+        margin-bottom: 30px;
+    }
+
+    .related-blogs ul {
+        list-style: none;
+    }
+
+    .related-blogs ul a {
+        text-decoration: none;
+        color: var(--COLORGR);
+    }
+
+    .related-blogs ul a li {
+        margin: 10px auto;
+    }
+
+    .like-btn span {
+        visibility: visible;
+        color: var(--COLOR);
+    }
+
+    span {
+        font-size: 14px;
+        color: red;
+        margin-bottom: 50px;
+        visibility: hidden;
+    }
+
+    input {
+        color: var(--COLOR);
+        padding: 10px
+    }
+
+    .input {
+        margin-bottom: 10px;
+    }
+
+    .success input {
+        border: var(--COLORGR) 2px solid;
+    }
+
+
+    .error input {
+        border: red 2px solid;
+    }
+
+    .error span {
+        visibility: visible;
+    }
+
+
+    /* FOOTER */
+
+    .footer-container {
+        margin: 0 300px;
+    }
+
+    .footer {
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .aside {
+        display: none;
+    }
+
+
+    #commentsDiv {
+        margin-top: 20px;
+
+    }
+
+    textarea {
+        background: transparent;
+        border: 1px solid var(--COLORGR);
+        width: 100%;
+        height: 200px;
+        margin-bottom: 20px;
+        color: var(--COLOR);
+        font-family: 'Poppins', sans-serif;
+        padding: 20px;
+        
+
+    }
+
+    #content {
+        margin: 50px;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        margin: 30px auto;
+        border: var(--COLORBD) 1px solid;
+        border-top: var(--COLORGR) 5px solid;
+        width: 700px;
+        height: max-content;
+    
+    }
+    
+    .card img {
+        width: 500px;
+        height: 300px;
+        border-radius: 0px 50px 0px 50px;
+    }
+
+    .card h3 {
+        font-size: 1rem;
+        margin: 20px;
+        color: rgb(114, 124, 20);
+    }
+
+
+    .card p {
+        margin: 20px;
+        color: grey;
+    }
+
+
+
+
+
+}
+
+
+

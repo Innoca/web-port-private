@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Test/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" >
+    <title>Document</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="box header">
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+            <h1>View Messages</h1>
+            
+        </div>
+        <div class="main-card"> 
+            
+            <div id="form-cards"></div>
+            
+        </div>
+        <div class="box aside"> 
+            <nav id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul class="nav-links">
+                    <li class="menu-item1"><a href="/Dashboard/dashboard.html">Dashboard</a></li>
+                    <li class="menu-item2"><a href="/Active Blogs/edits.html">Active Posts</a></li>
+                    <li class="menu-item3"><a href="/manage Messages/manage_messages.html">View Messages</a></li>
+                    <li class="menu-item4"><a href="/Home/index.html">Sign-out</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="box suggestions">Quick Actions</div>
+        <div class="box footer">
+            <div class="legal">"Legal statements"</div>
+            <div class="help">
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    <script src="/manage Messages/messages.js"></script>
+</body>
+</html>
