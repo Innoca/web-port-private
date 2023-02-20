@@ -1,18 +1,13 @@
 const mongoose = require('mongoose');
 
-const commentSchema = mongoose.Schema({
+const querySchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
-    blogId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Blog',
-        required: true,
-    },
     userId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         required: true,
     },
-    blogComment: {
+    userQuery: {
         type: String,
         default: ""
     }
@@ -20,4 +15,4 @@ const commentSchema = mongoose.Schema({
 })
 
 
-module.exports = mongoose.model('BlogComment', commentSchema)
+module.exports = mongoose.model('UserQuery', querySchema)

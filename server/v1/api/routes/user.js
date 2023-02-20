@@ -1,14 +1,31 @@
 import { Router } from 'express';
 import { Types } from 'mongoose';
+const joi = require('joi');
 const router = Router();
 import { hash as _hash, compare } from 'bcrypt';
 import { sign } from 'jsonwebtoken';
 
 
 import User, { find, deleteOne } from '../models/user';
+import { validateSignup } from '../validator';
+
+
+
+// import checkAuth from '../middleware/check-auth'; This will be for the admin
+
+const mongoose = require('mongoose')
 
 router.post('/signup', (req, res, next) => {
-    find({
+    const { error, value } = validateSignup(req.body);
+
+    if(error) {
+        console.log(error);
+        return res.send(error.details)
+    }
+
+    res.send('successful signup')
+
+    User.find({
         email: req.body.email
     })
     .exec()
@@ -34,7 +51,8 @@ router.post('/signup', (req, res, next) => {
             .then(result => {
                 console.log(result)
                 res.status(201).json({
-                    message: 'User created'
+                    message: 'User created',
+                    userInfo: user
                 })
             })
             .catch( err => {
@@ -53,7 +71,7 @@ router.post('/signup', (req, res, next) => {
 });
 
 router.post('/login', (req, res, next) => {
-    find({ email: req.body.email})
+    User.find({ email: req.body.email})
     .exec()
     .then(user => {
         if (user.length < 1) {

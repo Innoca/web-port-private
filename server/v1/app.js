@@ -1,13 +1,16 @@
 const express = require('express');
+const joi = require('joi');
 const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 
 const blogRoutes = require('./api/routes/blog').default;
 const commentRoutes = require('./api/routes/comments').default;
 const usersRoutes = require('./api/routes/user').default;
+const queryRoutes = require('./api/routes/queries').default;
+const likesRoutes = require('./api/routes/likes');
 
 
 app.use(morgan('dev'));
@@ -38,6 +41,8 @@ mongoose.Promise = global.Promise
 app.use('/blogs', blogRoutes);
 app.use('/comments', commentRoutes);
 app.use('/user', usersRoutes);
+app.use('/queries', queryRoutes);
+app.use('/likes', likesRoutes);
 
 
 // managing errors
